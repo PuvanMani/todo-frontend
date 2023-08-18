@@ -1,10 +1,8 @@
 import { Col, Layout, Row, Typography, theme } from 'antd';
 import React, { useEffect, useState } from 'react'
-import Navbar from '../component/Navbar';
-import Menubar from '../component/Menubar';
+import Navbar from '../component/Navbar/Navbar';
+import Menubar from '../component/SideBar/Menubar';
 import AllRouter from '../router/AllRouter';
-import LoginForm from '../component/Form/AuthForm/LoginForm';
-import RegisterForm from '../component/Form/AuthForm/registerForm';
 import { useNavigate } from 'react-router-dom';
 
 function MainLayout() {

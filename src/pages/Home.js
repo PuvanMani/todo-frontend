@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import DataTable from '../component/DataTable';
+import DataTable from '../component/Table/DataTable';
 import {
     CheckCircleOutlined,
     ClockCircleOutlined,
