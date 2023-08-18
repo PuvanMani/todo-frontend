@@ -1,10 +1,10 @@
 import { Button, Table } from 'antd';
 import React from 'react'
 
-function DataTable({ row, columns }) {
+function DataTable({ row, columns, pagination }) {
 
     return (
-        <Table dataSource={row} columns={columns} />
+        <Table pagination={pagination} dataSource={row} columns={columns} />
     )
 }
 

@@ -82,7 +82,7 @@ function Home() {
             <div>
                 <Link to='/add'><Button type="primary" style={{ margin: "16px 8px" }}>Add Todo</Button></Link>
             </div>
-            <DataTable row={TaskList} columns={columns} />
+            <DataTable row={TaskList} columns={columns} pagination={false} />
         </>
     )
 }

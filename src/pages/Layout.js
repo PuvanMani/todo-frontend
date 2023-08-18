@@ -19,7 +19,10 @@ function MainLayout() {
             {localStorage.getItem("token") ? <Layout><Menubar />
                 <Layout>
                     <Navbar colorBgContainer={colorBgContainer} setCollapsed={setCollapsed} collapsed={collapsed} />
-                    <AllRouter colorBgContainer={colorBgContainer} />
+                    <div style={{ padding: "0px 10px" }}>
+
+                        <AllRouter colorBgContainer={colorBgContainer} />
+                    </div>
                 </Layout>
             </Layout> : <AllRouter />}
         </Layout>
