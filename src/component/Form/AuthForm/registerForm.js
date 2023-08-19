@@ -23,11 +23,17 @@ const RegisterForm = () => {
         Password: false,
         ConfirmPassword: false
     })
-
+    const validateEmail = (email) => {
+        return String(email)
+            .toLowerCase()
+            .match(
+                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            );
+    };
     const handleSubmit = () => {
         let err = {
             Name: Name.trim() == "",
-            Email: Email.trim() == "",
+            Email: Email.trim() == "" || !(validateEmail(Email)),
             Username: UserName.trim() == "",
             Password: Password.trim() == "",
             ConfirmPassword: ConfirmPassword.trim() == "" || !(ConfirmPassword == Password),
@@ -40,7 +46,7 @@ const RegisterForm = () => {
                 Name, UserName, Password, Email
             }
 
-            Axios.post("/user/insert", data).then((res) => {
+            Axios.post("/auth/register", data).then((res) => {
                 if (res.data.Status) {
                     setErorObj(err)
                     nav('/login')
